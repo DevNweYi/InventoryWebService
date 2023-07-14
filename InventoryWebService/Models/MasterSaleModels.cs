@@ -34,5 +34,6 @@ namespace InventoryWebService.Models
         public string Remark { get; set; }
         public List<TranSaleModels> LstSaleTran { get; set; }
         public string CustomerName { get; set; }
+        public int StaffID { get; set; }
     }
 }

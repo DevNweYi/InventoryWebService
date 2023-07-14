@@ -44,6 +44,9 @@ namespace InventoryWebService.DBConnection
         public const string getLimitedDay = "Select LimitedDayID,LimitedDayName"
          + " From SysLimitedDay";
 
+        public const string getStaff = "Select StaffID,StaffName"
+            + " From SStaff";
+
         public string getNotiCountByClient(int clientId)
         {
             return "Select Count(ID) AS NotiCount"

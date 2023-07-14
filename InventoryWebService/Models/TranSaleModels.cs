@@ -13,5 +13,7 @@ namespace InventoryWebService.Models
         public int Amount { get; set; }
         public bool IsFOC { get; set; }
         public string ProductName { get; set; }
+        public int DiscountPercent { get; set; }
+        public int Discount { get; set; }
     }
 }

@@ -32,7 +32,7 @@ namespace InventoryWebService.Controllers
             dt.Columns.Add(new DataColumn("IsFOC", typeof(bool)));
             for (int i = 0; i < list.Count; i++)
             {
-                dt.Rows.Add(list[i].ProductID, list[i].Quantity, 0, list[i].SalePrice, 0, 0, 0, list[i].Amount, list[i].IsFOC);
+                dt.Rows.Add(list[i].ProductID, list[i].Quantity, 0, list[i].SalePrice, 0, list[i].DiscountPercent, list[i].Discount, list[i].Amount, list[i].IsFOC);
             }
 
             conn.Open();
@@ -63,6 +63,7 @@ namespace InventoryWebService.Controllers
             cmd.Parameters.AddWithValue("@ModuleCode", 1);
             cmd.Parameters.AddWithValue("@temptbl", dt);
             cmd.Parameters.AddWithValue("@AccountCode", 210);
+            cmd.Parameters.AddWithValue("@StaffID", model.StaffID);
             cmd.Connection = conn;
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataReader reader = cmd.ExecuteReader();

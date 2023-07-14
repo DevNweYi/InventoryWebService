@@ -34,6 +34,7 @@ namespace InventoryWebService.Controllers
                 model.ServiceCharges = Convert.ToInt32(reader["ServiceCharges"]);
                 model.HomeCurrency = Convert.ToString(reader["HomeCurrency"]);
                 model.IsClientPhoneVerify = Convert.ToInt32(reader["IsClientPhoneVerify"]);
+                model.ShopTypeCode = Convert.ToString(reader["ShopTypeCode"]);
             }
             reader.Close();
             conn.Close();

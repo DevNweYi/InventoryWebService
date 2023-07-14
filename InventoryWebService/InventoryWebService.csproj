@@ -250,6 +250,7 @@
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SaleController.cs" />
     <Compile Include="Controllers\SaleOrderController.cs" />
+    <Compile Include="Controllers\StaffController.cs" />
     <Compile Include="Controllers\SubMenuController.cs" />
     <Compile Include="Controllers\SummaryController.cs" />
     <Compile Include="Controllers\TownshipController.cs" />
@@ -280,6 +281,7 @@
     <Compile Include="Models\PaymentMethodModels.cs" />
     <Compile Include="Models\PaymentModels.cs" />
     <Compile Include="Models\ProductModels.cs" />
+    <Compile Include="Models\StaffModels.cs" />
     <Compile Include="Models\SubMenuModels.cs" />
     <Compile Include="Models\SummaryModels.cs" />
     <Compile Include="Models\TownshipModels.cs" />
@@ -370,6 +372,7 @@
     <Folder Include="Views\Product\" />
     <Folder Include="Views\SaleOrder\" />
     <Folder Include="Views\Sale\" />
+    <Folder Include="Views\Staff\" />
     <Folder Include="Views\SubMenu\" />
     <Folder Include="Views\Summary\" />
     <Folder Include="Views\Township\" />
