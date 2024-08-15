@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -253,6 +254,10 @@
     <Compile Include="Controllers\StaffController.cs" />
     <Compile Include="Controllers\SubMenuController.cs" />
     <Compile Include="Controllers\SummaryController.cs" />
+    <Compile Include="Controllers\TableController.cs" />
+    <Compile Include="Controllers\TableTypeController.cs" />
+    <Compile Include="Controllers\TasteController.cs" />
+    <Compile Include="Controllers\TasteMenuController.cs" />
     <Compile Include="Controllers\TownshipController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\VoucherSettingController.cs" />
@@ -266,6 +271,7 @@
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BankPaymentModels.cs" />
+    <Compile Include="Models\ClientAccessSettingModels.cs" />
     <Compile Include="Models\ClientModels.cs" />
     <Compile Include="Models\CompanySettingModels.cs" />
     <Compile Include="Models\CustomerModels.cs" />
@@ -284,6 +290,10 @@
     <Compile Include="Models\StaffModels.cs" />
     <Compile Include="Models\SubMenuModels.cs" />
     <Compile Include="Models\SummaryModels.cs" />
+    <Compile Include="Models\TasteMenuModels.cs" />
+    <Compile Include="Models\TasteModels.cs" />
+    <Compile Include="Models\TableModels.cs" />
+    <Compile Include="Models\TableTypeModels.cs" />
     <Compile Include="Models\TownshipModels.cs" />
     <Compile Include="Models\TranSaleOrderModels.cs" />
     <Compile Include="Models\TranSaleModels.cs" />
@@ -375,6 +385,10 @@
     <Folder Include="Views\Staff\" />
     <Folder Include="Views\SubMenu\" />
     <Folder Include="Views\Summary\" />
+    <Folder Include="Views\TableType\" />
+    <Folder Include="Views\Table\" />
+    <Folder Include="Views\TasteMenu\" />
+    <Folder Include="Views\Taste\" />
     <Folder Include="Views\Township\" />
     <Folder Include="Views\VoucherSetting\" />
   </ItemGroup>

@@ -15,5 +15,9 @@ namespace InventoryWebService.Models
         public string ProductName { get; set; }
         public int DiscountPercent { get; set; }
         public int Discount { get; set; }
+        public int Number { get; set; }
+        public string ActionCode { get; set; }
+        public string ActionName { get; set; }
+        public int OrginalQuantity { get; set; }
     }
 }

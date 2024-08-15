@@ -12,5 +12,6 @@ namespace InventoryWebService.Models
         public string HomeCurrency { get; set; }
         public int IsClientPhoneVerify { get; set; }
         public string ShopTypeCode { get; set; }
+        public string AccessPasswordClientApp { get; set; }
     }
 }

@@ -12,6 +12,7 @@ namespace InventoryWebService.Controllers
     public class ClientController : ApiController
     {
         SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings[AppConstant.ConnectionString].ToString());
+        Procedure procedure = new Procedure();
 
         [System.Web.Http.HttpPost]
         [System.Web.Http.Route("InsertClient")]
@@ -139,6 +140,27 @@ namespace InventoryWebService.Controllers
                 model.DivisionName = Convert.ToString(reader["DivisionName"]);
                 model.TownshipName = Convert.ToString(reader["TownshipName"]);
                 model.Phone = phone;
+            }
+            reader.Close();
+            conn.Close();
+
+            return Json(model);
+        }
+
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.Route("GetAccessClientApp")]
+        public IHttpActionResult GetAccessClientApp(int clientId)
+        {
+            ClientAccessSettingModels model = new ClientAccessSettingModels();
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(procedure.getAccessClientApp(clientId), conn);          
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.Text;
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                model.IsEditAccessClientApp = Convert.ToInt16(reader["IsEditAccessClientApp"]);
+                model.IsDeleteAccessClientApp = Convert.ToInt16(reader["IsDeleteAccessClientApp"]);
             }
             reader.Close();
             conn.Close();

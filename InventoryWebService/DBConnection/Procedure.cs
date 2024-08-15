@@ -47,6 +47,18 @@ namespace InventoryWebService.DBConnection
         public const string getStaff = "Select StaffID,StaffName"
             + " From SStaff";
 
+        public const string getTableType = "Select TableTypeID,TableTypeName"
+            + " From STableType";
+
+        public const string getTable = "Select TableID,TableTypeID,TableName"
+           + " From STable";
+
+        public const string getTaste = "Select TasteID,TasteName"
+           + " From STaste";
+
+        public const string getTasteMenu = "Select ID,TasteName,isnull(Price,0) AS Price,MainMenuID"
+          + " From STasteMenu";
+
         public string getNotiCountByClient(int clientId)
         {
             return "Select Count(ID) AS NotiCount"
@@ -80,6 +92,10 @@ namespace InventoryWebService.DBConnection
         public const string PrcCLGetSummaryData = "PrcCLGetSummaryData";
         public const string PrcCLGetMasterSaleOrder = "PrcCLGetMasterSaleOrder";
         public const string PrcCLGetTranSaleOrder = "PrcCLGetTranSaleOrder";
+        public const string PrcCLGetTranSaleBySaleID = "PrcCLGetTranSaleBySaleID";
+        public const string PrcCLGetMasterSaleBySaleID = "PrcCLGetMasterSaleBySaleID";
+        public const string PrcCLUpdateSale = "PrcCLUpdateSale";
+        public const string PrcCLDeleteSale = "PrcCLDeleteSale";
 
         public string getMasterSaleOrder(int saleOrderId)
         {
@@ -119,6 +135,12 @@ namespace InventoryWebService.DBConnection
             else if (notiType == AppConstant.NotiUpdateOrder)
                 query = "UPDATE SClientNoti SET IsStatusBarFinished=" + status + " WHERE ClientID=" + clientId + " AND UpdateSaleOrderID IN (" + notiIds + ")";
             return query;
+        }
+
+        public string getAccessClientApp(int clientId)
+        {
+            return "Select isnull(IsEditAccessClientApp,0) AS IsEditAccessClientApp, isnull(IsDeleteAccessClientApp,0) AS IsDeleteAccessClientApp"
+                + " From SClient Where ClientID=" + clientId;
         }
     }
 }

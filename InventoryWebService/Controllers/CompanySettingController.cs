@@ -35,6 +35,7 @@ namespace InventoryWebService.Controllers
                 model.HomeCurrency = Convert.ToString(reader["HomeCurrency"]);
                 model.IsClientPhoneVerify = Convert.ToInt32(reader["IsClientPhoneVerify"]);
                 model.ShopTypeCode = Convert.ToString(reader["ShopTypeCode"]);
+                model.AccessPasswordClientApp = Convert.ToString(reader["AccessPasswordClientApp"]);
             }
             reader.Close();
             conn.Close();

@@ -7,6 +7,11 @@ namespace InventoryWebService.Models
 {
     public class MasterSaleModels
     {      
+        public MasterSaleModels()
+        {
+            this.LstSaleTran = new List<TranSaleModels>();
+            this.LstSaleTranLog = new List<TranSaleModels>();
+        }
         public string SystemVoucherNo { get; set; }
         public string UserVoucherNo { get; set; }
         public string SaleDateTime { get; set; }
@@ -33,7 +38,11 @@ namespace InventoryWebService.Models
         public int PayPercentAmt { get; set; }
         public string Remark { get; set; }
         public List<TranSaleModels> LstSaleTran { get; set; }
+        public List<TranSaleModels> LstSaleTranLog { get; set; }
         public string CustomerName { get; set; }
         public int StaffID { get; set; }
+        public int SaleID { get; set; }
+        public int SlipID { get; set; }
+        public string ClientName { get; set; }
     }
 }
