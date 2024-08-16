@@ -21,38 +21,63 @@ namespace InventoryWebService.Controllers
         {
             MenuModels menu = new MenuModels();
             IList<MenuModels> lstMenu = new List<MenuModels>();
-
-            MainMenuModels mainMenu = new MainMenuModels();
+            
+            MainMenuModels mainMenu;          
             IList<MainMenuModels> lstMainMenu = new List<MainMenuModels>();
-            conn.Open();
-            SqlCommand cmd = new SqlCommand(Procedure.getMainMenu, conn);
-            cmd.Connection = conn;
-            cmd.CommandType = CommandType.Text;
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                mainMenu = new MainMenuModels();
-                mainMenu.MainMenuID = Convert.ToInt32(reader["MainMenuID"]);
-                mainMenu.MainMenuName = Convert.ToString(reader["MainMenuName"]);
-                lstMainMenu.Add(mainMenu);
-            }
-            reader.Close();
 
-            SubMenuModels subMenu = new SubMenuModels();
+            mainMenu = new MainMenuModels();
+            mainMenu.MainMenuID = 1;
+            mainMenu.MainMenuName = "MainMenu1";
+            lstMainMenu.Add(mainMenu);
+
+            mainMenu = new MainMenuModels();
+            mainMenu.MainMenuID = 2;
+            mainMenu.MainMenuName = "MainMenu2";
+            lstMainMenu.Add(mainMenu);
+
+            mainMenu = new MainMenuModels();
+            mainMenu.MainMenuID = 3;
+            mainMenu.MainMenuName = "MainMenu3";
+            lstMainMenu.Add(mainMenu);
+
+            SubMenuModels subMenu;
             IList<SubMenuModels> lstSubMenu = new List<SubMenuModels>();
-            cmd = new SqlCommand(Procedure.getSubMenu, conn);
-            cmd.Connection = conn;
-            cmd.CommandType = CommandType.Text;
-            reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                subMenu = new SubMenuModels();
-                subMenu.SubMenuID = Convert.ToInt32(reader["SubMenuID"]);
-                subMenu.MainMenuID = Convert.ToInt32(reader["MainMenuID"]);
-                subMenu.SubMenuName = Convert.ToString(reader["SubMenuName"]);
-                lstSubMenu.Add(subMenu);
-            }
-            reader.Close();
+
+            subMenu = new SubMenuModels();
+            subMenu.SubMenuID = 1;
+            subMenu.MainMenuID = 1;
+            subMenu.SubMenuName = "SubMenu1";
+            lstSubMenu.Add(subMenu);
+
+            subMenu = new SubMenuModels();
+            subMenu.SubMenuID = 2;
+            subMenu.MainMenuID = 1;
+            subMenu.SubMenuName = "SubMenu2";
+            lstSubMenu.Add(subMenu);
+
+            subMenu = new SubMenuModels();
+            subMenu.SubMenuID = 3;
+            subMenu.MainMenuID = 2;
+            subMenu.SubMenuName = "SubMenu3";
+            lstSubMenu.Add(subMenu);
+
+            subMenu = new SubMenuModels();
+            subMenu.SubMenuID = 4;
+            subMenu.MainMenuID = 2;
+            subMenu.SubMenuName = "SubMenu4";
+            lstSubMenu.Add(subMenu);
+
+            subMenu = new SubMenuModels();
+            subMenu.SubMenuID = 5;
+            subMenu.MainMenuID = 3;
+            subMenu.SubMenuName = "SubMenu5";
+            lstSubMenu.Add(subMenu);
+
+            subMenu = new SubMenuModels();
+            subMenu.SubMenuID = 6;
+            subMenu.MainMenuID = 3;
+            subMenu.SubMenuName = "SubMenu6";
+            lstSubMenu.Add(subMenu);
 
             for (int i = 0; i < lstMainMenu.Count(); i++)
             {
